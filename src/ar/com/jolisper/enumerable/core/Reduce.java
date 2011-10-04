@@ -1,17 +1,20 @@
 package ar.com.jolisper.enumerable.core;
 
-import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Reduce<T> {
+public abstract class Reduce<ResultType, CollectionType> {
 	
-public <R> R reduce(R result, List<? extends T> collection) {
+	public Object reduce(ResultType initValue, List<? extends CollectionType> collection) {
 		
-		List<T> selection = new LinkedList<T>();
+		ResultType result = initValue;
+		
+		for ( CollectionType element : collection ) {
+			result = logic( result , element );
+		}
 		
 		return result;
 	}
 
-	protected abstract boolean criteria(T element);
+	protected abstract ResultType logic(ResultType result, CollectionType element);
 
 }

@@ -3,6 +3,7 @@ package ar.com.jolisper.enumerable.test;
 import java.util.LinkedList;
 import java.util.List;
 
+import ar.com.jolisper.enumerable.core.Reduce;
 import ar.com.jolisper.enumerable.core.Selector;
 
 public class MainTest {
@@ -29,6 +30,21 @@ public class MainTest {
 			System.out.println(bean.getName());
 		}
 		
+		//
+		List<Integer> intList = new LinkedList<Integer>();
+		
+		intList.add(2);
+		intList.add(5);
+		intList.add(6);
+		
+		Integer reduce = (Integer) new Reduce<Integer, Integer>(){
+			@Override
+			protected Integer logic(Integer result, Integer element) {
+				return result + element;
+			}
+		}.reduce(4, intList);		
+		
+		System.out.println( reduce.toString() );
 	}
 
 }
