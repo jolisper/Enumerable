@@ -13,6 +13,7 @@ public class MainTest {
 	 */
 	public static void main(String[] args) {
 		
+		// Select test
 		List<TestBean> list = new LinkedList<TestBean>();
 		
 		list.add( new TestBean().setName("Jorge") );
@@ -24,13 +25,13 @@ public class MainTest {
 			protected boolean criteria(TestBean element) {
 				return element.getName().equals("Jorge");
 			}
-		}.select(list);
+		}.select( list );
 		
 		for (TestBean bean : select) {
-			System.out.println(bean.getName());
+			System.out.println( bean.getName() );
 		}
 		
-		//
+		// Reduce test
 		List<Integer> intList = new LinkedList<Integer>();
 		
 		intList.add(2);
@@ -42,7 +43,7 @@ public class MainTest {
 			protected Integer logic(Integer result, Integer element) {
 				return result + element;
 			}
-		}.reduce(4, intList);		
+		}.reduce( 4, intList );		
 		
 		System.out.println( reduce.toString() );
 	}
