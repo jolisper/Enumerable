@@ -4,7 +4,7 @@ import java.util.List;
 
 public abstract class Reduce<ResultType, CollectionType> {
 	
-	public Object reduce(ResultType initValue, List<? extends CollectionType> collection) {
+	public ResultType reduce(ResultType initValue, List<? extends CollectionType> collection) {
 		
 		ResultType result = initValue;
 		
