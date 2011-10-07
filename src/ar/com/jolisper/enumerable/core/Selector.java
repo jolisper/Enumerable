@@ -3,21 +3,21 @@ package ar.com.jolisper.enumerable.core;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Selector <T> {
+public abstract class Selector <ElementType> {
 	
-	public List<? extends T > select(List<? extends T> collection) {
+	public List<? extends ElementType > select( List<? extends ElementType> collection ) {
 		
-		List<T> selection = new LinkedList<T>();
+		List<ElementType> selection = new LinkedList<ElementType>();
 		
-		for (T element : collection) {
+		for ( ElementType element : collection ) {
 			if ( criteria(element) ) {
-				selection.add(element);
+				selection.add( element );
 			}
 		}
 		
 		return selection;
 	}
 
-	protected abstract boolean criteria(T element);
+	protected abstract boolean criteria( ElementType element );
 
 }

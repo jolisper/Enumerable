@@ -8,7 +8,7 @@ public class TestBean {
 		return name;
 	}
 
-	public TestBean setName(String name) {
+	public TestBean setName( String name ) {
 		this.name = name;
 		return this;
 	}

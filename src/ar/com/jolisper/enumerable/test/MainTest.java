@@ -26,7 +26,7 @@ public class MainTest {
 		List<? extends TestBean> select = new Selector<TestBean>() {
 			@Override
 			protected boolean criteria( TestBean element ) {
-				return element.getName().equals( "Jorge") ;
+				return element.getName().equals( "Jorge" ) ;
 			}
 		}.select( list );
 		
@@ -39,9 +39,9 @@ public class MainTest {
 		
 		List<Integer> intList = new LinkedList<Integer>();
 		
-		intList.add(2);
-		intList.add(5);
-		intList.add(6);
+		intList.add( 2 );
+		intList.add( 5 );
+		intList.add( 6 );
 		
 		Integer reduce = new Reduce<Integer, Integer>(){
 			@Override

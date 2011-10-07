@@ -3,19 +3,19 @@ package ar.com.jolisper.enumerable.core;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Mapper<ResultType, CollectionType> {
+public abstract class Mapper<ResultType, ElementType> {
 	
-	public List<ResultType> map(List<? extends CollectionType> collection) {
+	public List<ResultType> map( List<? extends ElementType> collection ) {
 		
 		List<ResultType> result = new LinkedList<ResultType>();
 		
-		for ( CollectionType element : collection ) {
+		for ( ElementType element : collection ) {
 			result.add( logic( element ) );
 		}
 		
 		return result;
 	}
 
-	protected abstract ResultType logic( CollectionType element );
+	protected abstract ResultType logic( ElementType element );
 
 }
