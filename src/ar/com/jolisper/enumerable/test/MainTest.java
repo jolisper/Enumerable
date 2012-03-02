@@ -1,5 +1,6 @@
 package ar.com.jolisper.enumerable.test;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class MainTest {
 		list.add( new TestBean().setName( "Fran" ) );
 		list.add( new TestBean().setName( "Valen" ) );
 		
-		List<? extends TestBean> select = new Selector<TestBean>() {
+		Collection<? extends TestBean> select = new Selector<TestBean>() {
 			@Override
 			protected boolean criteria( TestBean element ) {
 				return element.getName().equals( "Jorge" ) ;
@@ -55,7 +56,7 @@ public class MainTest {
 		// Map test
 		System.out.println( "Map test:" );
 		
-		List<Integer> map = new Mapper<Integer, Integer>() {
+		Collection<Integer> map = new Mapper<Integer, Integer>() {
 			@Override
 			protected Integer logic( Integer element ) {
 				return element * 2;

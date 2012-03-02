@@ -1,13 +1,13 @@
 package ar.com.jolisper.enumerable.core;
 
+import java.util.Collection;
 import java.util.LinkedList;
-import java.util.List;
 
 public abstract class Selector <ElementType> {
 	
-	public List<? extends ElementType > select( List<? extends ElementType> collection ) {
+	public Collection<? extends ElementType > select( Collection<? extends ElementType> collection ) {
 		
-		List<ElementType> selection = new LinkedList<ElementType>();
+		Collection<ElementType> selection = new LinkedList<ElementType>();
 		
 		for ( ElementType element : collection ) {
 			if ( criteria(element) ) {

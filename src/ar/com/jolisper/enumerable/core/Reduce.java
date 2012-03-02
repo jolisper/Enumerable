@@ -1,10 +1,10 @@
 package ar.com.jolisper.enumerable.core;
 
-import java.util.List;
+import java.util.Collection;
 
 public abstract class Reduce<ResultType, ElementType> {
 	
-	public ResultType reduce( ResultType initValue, List<? extends ElementType> collection ) {
+	public ResultType reduce( ResultType initValue, Collection<? extends ElementType> collection ) {
 		
 		ResultType result = initValue;
 		
